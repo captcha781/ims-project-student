@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { forceSignout } from "./actions";
 import { decodeJwt } from "./actions/jsonwebtoken";
 import AppRoutes from "./AppRoutes";
@@ -9,6 +9,13 @@ import { socket } from "./config/socket";
 import isLogin from "./lib/isLogin";
 import { getAuthToken } from "./lib/localStorage";
 import Store from "./redux/store";
+import "antd/dist/reset.css";
+import "./assets/styles/main.css";
+import "./assets/styles/responsive.css";
+import { ProtectedRoute } from "./config/ProtectedRoute";
+import Signin from "./pages/Signin";
+import Home from "./pages/Home";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
   const navigate = useNavigate();
@@ -19,13 +26,13 @@ const App = () => {
     socket.on("forceLogout", (data) => {
       forceSignout(navigate, dispatch);
     });
-  },[])
+  }, []);
 
   useEffect(() => {
-    if(!isAuth && isLogin()){
+    if (!isAuth && isLogin()) {
       decodeJwt(getAuthToken(), Store.dispatch);
     }
-  },[])
+  }, []);
 
   return (
     <React.Fragment>

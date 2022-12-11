@@ -19,6 +19,7 @@ const socketFun = () => {
 let socket = socketFun()
 
 socket.on("connection",data => {
+    console.log("runner");
     let auth = Store.getState().auth
     console.log(data);
     if(auth.isAuth){
