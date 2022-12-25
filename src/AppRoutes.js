@@ -12,9 +12,7 @@ const routes = [
     path: "/",
     element: (
       <ProtectedRoute type={"public"}>
-        <Main>
           <Home />
-        </Main>
       </ProtectedRoute>
     ),
   },

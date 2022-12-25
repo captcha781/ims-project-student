@@ -12,6 +12,7 @@
 
 // import { useState } from "react";
 import { Menu, Button } from "antd";
+import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
@@ -21,7 +22,6 @@ function Sidenav({ color }) {
   const { pathname } = useLocation();
   const page = pathname.replace("/", "");
   const auth = useSelector((state) => state.auth);
-  console.log("runner");
   return (
     <>
       <div className="brand tw-flex tw-font-semibold tw-text-lg">
@@ -64,7 +64,7 @@ function Sidenav({ color }) {
               </Menu.Item>
             );
           } else {
-            return <></>;
+            return <React.Fragment key={Math.random()}></React.Fragment>;
           }
         })}
       </Menu>

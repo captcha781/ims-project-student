@@ -23,7 +23,7 @@ socket.on("connection",data => {
     let auth = Store.getState().auth
     console.log(data);
     if(auth.isAuth){
-        socket.emit("userUpdater",auth.userId)
+        socket.emit("userUpdater",auth.user._id)
     }
 })
 

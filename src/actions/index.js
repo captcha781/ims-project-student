@@ -14,7 +14,9 @@ export const loadUser = async (dispatch) => {
       url: "/viewuser",
       method: "get",
     });
-    dispatch(initialize(response.data));
+    dispatch(
+      initialize({ isAuth: true, userId: response.data.user._id, user: response.data.user })
+    );
   } catch (error) {
     dispatch(initialize({ isAuth: false }));
   }

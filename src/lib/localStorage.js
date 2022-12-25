@@ -12,9 +12,9 @@ export const removeAuthToken = () => {
 };
 
 export const setAuthToken = async (token) => {
-  let expiredStorage = new ExpiredStorage();
-  expiredStorage.setItem("user_token", token, 43200); //43200 - 12hrs
-  // localStorage.setItem('user_token', token);
+  // let expiredStorage = new ExpiredStorage();
+  // expiredStorage.setItem("user_token", token, 43200); //43200 - 12hrs
+  localStorage.setItem('user_token', token);
   return true;
 };
 

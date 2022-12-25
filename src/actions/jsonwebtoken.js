@@ -15,7 +15,7 @@ export const decodeJwt = (token, dispatch) => {
           initialize({
             isAuth: true,
             userId: decoded._id,
-            uniqueId: decoded.uniqueId,
+            user: {}
           })
         );
       }
@@ -23,7 +23,7 @@ export const decodeJwt = (token, dispatch) => {
   } catch (err) {
     removeAuthToken();
     removeAuthorization();
-    dispatch(initialize({ isAuth: false }));
+    dispatch(initialize({ isAuth: false, userId: "", user: {} }));
   }
 };
 
