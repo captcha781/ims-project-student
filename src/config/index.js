@@ -2,7 +2,7 @@ let config;
 
 if (process.env.BUILD_MODE === "production") {
     config = {
-        API_URL: "https://imsprojectapi.netlify.app/api",
+        API_URL: "https://ims-project-backend.vercel.app/api",
         IMAGE: {
 
         }
