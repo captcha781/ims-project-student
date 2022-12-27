@@ -9,7 +9,7 @@ if (process.env.BUILD_MODE === "production") {
     }
 } else {
     config = {
-        API_URL: "http://localhost:5000/api",
+        API_URL: "https://ims-project-backend.vercel.app/api",
         IMAGE: {
             
         }
