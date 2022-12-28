@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   TeamOutlined,
   CaretUpFilled,
@@ -7,8 +7,12 @@ import {
 import { GoPencil } from "react-icons/go";
 import { RiBookLine } from "react-icons/ri";
 import { BsCalendar3 } from "react-icons/bs";
+import { socket } from "../../config/socket";
 
 const DashLayout = () => {
+  useEffect(() => {
+    socket.emit("testing", "runner node")
+  },[])
   return (
     <React.Fragment>
       <div className="dashlayout">

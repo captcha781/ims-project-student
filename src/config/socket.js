@@ -6,11 +6,11 @@ const socketFun = () => {
 
     let auth = Store.getState().auth
     if (auth.isAuth) {
-        return io(config.API_URL, {
+        return io(config.SOCKET, {
             autoConnect: true,
         });
     } else {
-        return io(config.API_URL, {
+        return io(config.SOCKET, {
             autoConnect: true,
         });
     }
