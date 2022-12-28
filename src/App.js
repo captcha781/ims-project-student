@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { forceSignout } from "./actions";
 import { decodeJwt } from "./actions/jsonwebtoken";
 import AppRoutes from "./AppRoutes";
@@ -12,10 +12,6 @@ import Store from "./redux/store";
 import "antd/dist/reset.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
-import { ProtectedRoute } from "./config/ProtectedRoute";
-import Signin from "./pages/Signin";
-import Home from "./pages/Home";
-import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
   const navigate = useNavigate();

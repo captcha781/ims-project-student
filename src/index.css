@@ -1,5 +1,16 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+@layer components {
+  .dashlayout {
+    @apply tw-grid tw-grid-cols-1 xs:tw-grid-cols-2 md:tw-grid-cols-8 lg:tw-grid-cols-12 tw-gap-3;
+  }
+  .dash-item{
+    @apply tw-col-span-1 xs:tw-col-span-1 md:tw-col-span-2 lg:tw-col-span-3 tw-bg-white tw-p-3 tw-shadow-lg tw-shadow-gray-200 tw-rounded-md tw-relative tw-cursor-pointer hover:tw-scale-105 tw-transition-all tw-duration-300 tw-border-b-4;
+  }
+  .dash-item-icon {
+    @apply tw-w-10 tw-h-10 tw-absolute tw-rounded-full tw-flex tw-justify-center tw-items-center tw-right-4 tw-bottom-10 tw-text-white;
+  }
+}
